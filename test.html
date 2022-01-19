@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+<p>abra o console do dev tools com F12</p>
+<p>como faço para juntar esses strings separadas pela iteração do for</p>
+<script>
+    var textoEscrito = 'marcelo'
+
+    for (var i = 0; i < textoEscrito.length; i++) {
+        var letras = textoEscrito[i]
+        console.log(letras)
+
+        if (letras == 'a') {
+            letras = 'ai'
+        }
+        if (letras == 'e') {
+            letras = 'enter'
+        }
+        if (letras == 'i') {
+            letras = 'imes'
+        }
+        if (letras == 'o') {
+            letras = 'ober'
+        }
+        if (letras == 'u') {
+            letras = 'ufat'
+        }
+
+        var palavraFinal = letras
+        console.log(palavraFinal)
+
+        // var palavraFinal = palavraFinal + letras
+        // console.log(palavraFinal)
+        // o console log da palavraFinal retorna
+        // m
+        // ai
+        // r
+        // c
+        // enter
+        // l
+        // ober
+        // como faço para juntar esses strings separadas pela iteração do for
+    }
+</script>
