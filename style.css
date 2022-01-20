@@ -12,6 +12,13 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+h1 {
+    color: white;
+}
+
+a {
+    color: white;
+}
 .titulo {
     padding: 15px;
     width: 30vw;
