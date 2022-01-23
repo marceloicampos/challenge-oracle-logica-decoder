@@ -1,140 +1,98 @@
 <!DOCTYPE html>
 <meta charset="UTF-8" />
-<p>abra o console do dev tools com F12</p>
-<p>como faço para juntar esses strings separadas pela iteração do for</p>
+<p>ESCREVA apenas letras minúsculas e sem acento</p>
+<input type="text" id="input" size="60" />
+<br /><br />
+<button id="btn-cripto">Criptografar</button>
+<p>Texto Encriptado</p>
+<input type="text" id="cripto" size="60" />
+<br /><br />
+<button id="btn-copy">Copiar Texto Encriptado</button>
+<button id="btn-descripto">Descriptografar</button>
+<p>Texto Desencriptado</p>
+<input type="text" id="descripto" size="60" />
+<br /><br />
+<button id="btn-clear">Apagar Mensagens</button>
+<p><a href="./index.html">Voltar para Home</a></p>
 <script>
-    var textoEscrito = 'marcelo'
+    var btnCripto = document.querySelector('#btn-cripto')
+    var btnDesCripto = document.querySelector('#btn-descripto')
+    var btnCopy = document.querySelector('#btn-copy')
+    var btnClear = document.querySelector('#btn-clear')
 
-    for (var i = 0; i < textoEscrito.length; i++) {
-        var letras = textoEscrito[i]
-        console.log(letras)
+    btnCripto.addEventListener('click', function () {
+        var input = document.querySelector('#input').value
+        var fraseCripto = []
+        var cripto = document.querySelector('#cripto')
 
-        if (letras == 'a') {
-            letras = 'ai'
+        for (var i = 0; i < input.length; i++) {
+            var letrasC = input[i]
+
+            if (letrasC == 'a') {
+                letrasC = 'ai'
+            }
+            if (letrasC == 'e') {
+                letrasC = 'enter'
+            }
+            if (letrasC == 'i') {
+                letrasC = 'imes'
+            }
+            if (letrasC == 'o') {
+                letrasC = 'ober'
+            }
+            if (letrasC == 'u') {
+                letrasC = 'ufat'
+            }
+
+            fraseCripto.push(letrasC)
+            var palavraCripto = fraseCripto.join('')
+            cripto.value = palavraCripto
         }
-        if (letras == 'e') {
-            letras = 'enter'
-        }
-        if (letras == 'i') {
-            letras = 'imes'
-        }
-        if (letras == 'o') {
-            letras = 'ober'
-        }
-        if (letras == 'u') {
-            letras = 'ufat'
-        }
-
-        var palavraFinal = letras
-        console.log(palavraFinal)
-
-        // var palavraFinal = palavraFinal + letras
-        // console.log(palavraFinal)
-        // o console log da palavraFinal retorna
-        // m
-        // ai
-        // r
-        // c
-        // enter
-        // l
-        // ober
-        // como faço para juntar esses strings separadas pela iteração do for
-    }
-    /////////////////////////////////////////////////////////////////////////////////////////////
-    var palavras = document.querySelector('#palavras') //primeiro textarea
-    var decodificar = document.querySelector('#decodifica') //Segundo textarea
-    var texto
-    var descriptografando
-
-    palavras.addEventListener('input', function () {
-        var array = [] //texto criptografado
-        var array_desc = [] //texto descriptografado
-
-        var palavra = this.value
-        palavra.textContent = palavra
-        //console.log(palavra)
-        //Criptografia
-        for (var i = 0; i < palavra.length; i++) {
-            if (palavra[i] == 'a') {
-                array.push('ai')
-            }
-            if (palavra[i] == 'e') {
-                array.push('enter')
-            }
-            if (palavra[i] == 'i') {
-                array.push('imes')
-            }
-            if (palavra[i] == 'o') {
-                array.push('ober')
-            }
-            if (palavra[i] == 'u') {
-                array.push('ufat')
-            } else if (
-                palavra[i] != 'a' &&
-                palavra[i] != 'e' &&
-                palavra[i] != 'i' &&
-                palavra[i] != 'o' &&
-                palavra[i] != 'u'
-            ) {
-                array.push(palavra[i])
-            }
-
-            //Descriptografia
-            if (array[i] == 'ai') {
-                array_desc.push('a')
-            }
-            if (array[i] == 'enter') {
-                array_desc.push('e')
-            }
-            if (array[i] == 'imes') {
-                array_desc.push('i')
-            }
-            if (array[i] == 'ober') {
-                array_desc.push('o')
-            }
-            if (array[i] == 'ufat') {
-                array_desc.push('u')
-            } else if (
-                array[i] != 'ai' &&
-                array[i] != 'enter' &&
-                array[i] != 'imes' &&
-                array[i] != 'ober' &&
-                array[i] != 'ufat'
-            ) {
-                array_desc.push(array[i])
-            }
-        }
-
-        texto = array.join('') //Criptografado
-        //console.log(texto)
-
-        descriptografando = array_desc.join('') //Descriptografado
-        console.log('-> ' + descriptografando)
     })
 
-    //Botão criptografar. Mostra o texto criptografado no segundo textarea.
-    var botao = document.querySelector('#cripto')
-    botao.addEventListener('click', function (event) {
-        event.preventDefault()
-        var palavra = texto
-        decodificar.textContent = palavra
-        decodificar = decodificar.value
-    })
-
-    //Deveria mostrar o valor da variável final que é o texto descriptografado no segundo textarea quando clico no botão descriptografar
-    //mas esta mostrando o texto criptografado.
-    var botao2 = document.querySelector('#descripto')
-    botao2.addEventListener('click', function (event) {
-        event.preventDefault()
-
-        decodificar.textContent = descriptografando
-        decodificar = decodificar.value
-    })
-
-    //Botão copiar
-    function copiar() {
-        var texto = document.getElementById('decodifica')
-        texto.select()
+    btnCopy.addEventListener('click', function copy() {
+        var copyText = document.querySelector('#cripto')
+        copyText.select()
         document.execCommand('copy')
-    }
+        alert('Texto Criptografado Copiado')
+        document.querySelector('#descripto').value = ''
+    })
+
+    btnDesCripto.addEventListener('click', function () {
+        var inputCripto = document.querySelector('#cripto').value
+        var fraseDescripto = []
+        var desCripto = document.querySelector('#descripto')
+
+        var myArray = inputCripto.split(/(ai|enter|imes|ober|ufat)/g)
+
+        for (var i = 0; i < myArray.length; i++) {
+            var letrasD = myArray[i]
+
+            if (letrasD == 'ai') {
+                letrasD = 'a'
+            }
+            if (letrasD == 'enter') {
+                letrasD = 'e'
+            }
+            if (letrasD == 'imes') {
+                letrasD = 'i'
+            }
+            if (letrasD == 'ober') {
+                letrasD = 'o'
+            }
+            if (letrasD == 'ufat') {
+                letrasD = 'u'
+            }
+
+            fraseDescripto.push(letrasD)
+            var palavraDescripto = fraseDescripto.join('')
+            desCripto.value = palavraDescripto
+        }
+    })
+
+    btnClear.addEventListener('click', function () {
+        document.querySelector('#input').value = ''
+        document.querySelector('#cripto').value = ''
+        document.querySelector('#descripto').value = ''
+    })
 </script>
