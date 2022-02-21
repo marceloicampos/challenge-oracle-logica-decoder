@@ -75,35 +75,44 @@ a {
 }
 
 #btn-cripto {
-    background-color: #0A3871;
+    background-color: #0a3871;
 }
 
 #btn-descripto {
-    background-color: #757FB2;
+    background-color: #757fb2;
 }
 
 #btn-copy {
-    background-color: #343A40;
+    background-color: #343a40;
 }
 
 #btn-clear {
-    background-color: #868E96;
+    background-color: #868e96;
+}
+
+.badge {
+    display: flex;
+    height: 360px;
+    width: 360px;
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .foot {
     text-align: center;
-    color: #C74634;
+    color: #c74634;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #3A3632;
+    background-color: #3a3632;
     font-size: 1.5em;
     padding: 0.5em;
 }
 
 .foot a {
-    color: #DFFFFF;
+    color: #dfffff;
     text-decoration: none;
 }
 
