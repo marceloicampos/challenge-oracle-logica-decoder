@@ -1,10 +1,10 @@
 # challenge-oracle-logica-decoder
 Challenge Oracle Lógica de Programação
 
-00/00/2022 - Inicio do Projeto
+19/01/2022 - Inicio do Projeto
 
-00/00/2022 - Entrega do Projeto
+20/02/2022 - Entrega do Projeto
 
-## [Preview - CLIQUE AQUI](https://#/)
+## [Preview - CLIQUE AQUI](https://marceloicampos.github.io/challenge-oracle-logica-decoder/)
 
-![](https://###.#####png)
+![](https://raw.githubusercontent.com/marceloicampos/challenge-oracle-logica-decoder/main/images/decoder.jpg)
