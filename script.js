@@ -25,12 +25,9 @@ btnCripto.addEventListener('click', function cripto(event) {
     event.preventDefault()
 
     encriptado = inputText.value.replace(/a|e|i|o|u/gi, function (i) {
-        let itemListaCodec = codec[i].replace(
-            /(?:^|\s)\S/g,
-            function (elemento) {
-                return elemento.toLowerCase()
-            }
-        )
+        let itemListaCodec = codec[i].replace(/(?:^|\s)\S/g, function (elemento) {
+            return elemento.toLowerCase()
+        })
         return itemListaCodec
     })
 
@@ -43,18 +40,12 @@ btnCripto.addEventListener('click', function cripto(event) {
 btnDesCripto.addEventListener('click', function descripto(event) {
     event.preventDefault()
 
-    desencriptado = inputText.value.replace(
-        /ai|enter|imes|ober|ufat/gi,
-        function (i) {
-            let itemListaDecodec = decodec[i].replace(
-                /(?:^|\s)\S/g,
-                function (elemento) {
-                    return elemento.toLowerCase()
-                }
-            )
-            return itemListaDecodec
-        }
-    )
+    desencriptado = inputText.value.replace(/ai|enter|imes|ober|ufat/gi, function (i) {
+        let itemListaDecodec = decodec[i].replace(/(?:^|\s)\S/g, function (elemento) {
+            return elemento.toLowerCase()
+        })
+        return itemListaDecodec
+    })
 
     outputText.value = desencriptado
 
